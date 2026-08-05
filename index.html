@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cyberpunk Snake Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <section class="playfield-panel">
+      <div class="panel-top">
+        <span class="panel-label">PLAYFIELD</span>
+        <span class="panel-level">LEVEL <span id="level">01</span></span>
+      </div>
+
+      <div class="board-wrapper">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div id="game-over-screen" class="overlay hidden">
+          <h2>GAME OVER</h2>
+          <p>Final Score: <span id="final-score">0</span></p>
+          <button id="gameover-restart-btn">PLAY AGAIN</button>
+        </div>
+      </div>
+
+      <div class="tray-row">
+        <div class="legend-row">
+          <span class="legend-item"><span class="legend-dot snake"></span> SNAKE</span>
+          <span class="legend-item"><span class="legend-dot food"></span> FOOD</span>
+        </div>
+        <div class="ready-status">
+          <span class="ready-text">READY</span>
+          <span class="ready-subtext">USE THE CONTROLS TO PLAY</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="score-card">
+        <span class="card-label">CURRENT SCORE</span>
+        <div class="score-display" id="score">0000</div>
+        <div class="score-footer">
+          <span class="best-score">BEST <span id="high-score">0000</span></span>
+          <span class="score-delta" id="score-delta">+0%</span>
+        </div>
+      </div>
+
+      <div class="stats-card">
+        <div class="info-row">
+          <span>HIGH SCORE</span>
+          <span id="high-score-panel">0000</span>
+        </div>
+        <div class="info-row">
+          <span>SPEED</span>
+          <span><span id="speed">22.2</span> px/s</span>
+        </div>
+        <div class="info-row">
+          <span>SEGMENTS</span>
+          <span id="segments">01</span>
+        </div>
+      </div>
+
+      <div class="controls-card">
+        <div class="controls-label">CONTROLS</div>
+        <div class="controls-grid">
+          <div class="control-key">↑</div>
+          <div class="control-row">
+            <div class="control-key">←</div>
+            <div class="control-key">↓</div>
+            <div class="control-key">→</div>
+          </div>
+        </div>
+        <div class="controls-hint">ARROW KEYS TO MOVE<br />SPACE TO PAUSE</div>
+      </div>
+
+      <button id="restart-btn" class="restart-btn">RESTART GAME</button>
+      <button id="fullscreen-btn" class="small-button">FULL SCREEN</button>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
